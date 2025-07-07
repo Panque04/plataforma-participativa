@@ -1,0 +1,19 @@
+footer {
+  background-color: #5064a5;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  bottom: 0;
+  column-count: 3;
+  column-gap: 16px;
+  margin-top: auto;
+}
+
+.footer-info,
+.footer-horarios,
+.footer-soporte {
+  margin: 15px 0;
+  break-inside: avoid;
+}

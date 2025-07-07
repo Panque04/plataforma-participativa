@@ -1,0 +1,258 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.estadisticos-section {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.stat-icon {
+  font-size: 3rem;
+  margin-right: 20px;
+}
+
+.stat-content h3 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0;
+  color: #333;
+}
+
+.stat-content p {
+  font-size: 1.1rem;
+  margin: 5px 0;
+  color: #666;
+}
+
+.stat-content small {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.usuarios {
+  border-left: 5px solid #4caf50;
+}
+
+.tramites-pendientes {
+  border-left: 5px solid #ff9800;
+}
+
+.tramites-atendidos {
+  border-left: 5px solid #2196f3;
+}
+
+.total-tramites {
+  border-left: 5px solid #9c27b0;
+}
+
+.gender-stats {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gender-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.gender-card {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.gender-card:hover {
+  transform: scale(1.05);
+}
+
+.gender-icon {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.gender-content h4 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 10px 0;
+  color: #333;
+}
+
+.gender-content p {
+  color: #666;
+  margin: 5px 0;
+}
+
+.percentage {
+  background: #007bff;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.masculino {
+  border: 2px solid #2196f3;
+}
+
+.masculino .percentage {
+  background: #2196f3;
+}
+
+.femenino {
+  border: 2px solid #e91e63;
+}
+
+.femenino .percentage {
+  background: #e91e63;
+}
+
+.no-identificado {
+  border: 2px solid #9e9e9e;
+}
+
+.no-identificado .percentage {
+  background: #9e9e9e;
+}
+
+.progress-section {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.progress-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 30px;
+  background: #e0e0e0;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4caf50, #8bc34a);
+  border-radius: 15px;
+  transition: width 0.5s ease;
+  position: relative;
+}
+
+.progress-fill::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.progress-text {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.update-info {
+  text-align: center;
+  padding: 15px;
+  background: rgba(0, 123, 255, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(0, 123, 255, 0.2);
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-primary {
+  color: #007bff !important;
+}
+
+.text-muted {
+  color: #6c757d !important;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem !important;
+}
+
+.mt-4 {
+  margin-top: 1.5rem !important;
+}
+
+.mt-5 {
+  margin-top: 3rem !important;
+}
+
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gender-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .stat-icon {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+}

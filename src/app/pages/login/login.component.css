@@ -1,0 +1,214 @@
+/* ============================================================================ */
+/* ESTILOS PARA EL COMPONENTE DE LOGIN */
+/* ============================================================================ */
+
+/* Contenedor principal con imagen de fondo */
+.login-container {
+  background-image: url("/assets/images/Tausa.jpg");
+  background-size: cover;
+  background-position: center left;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Formulario principal */
+.form-login {
+  width: 450px;
+  max-width: 90vw;
+  background: #4e4d4d;
+  box-shadow: 7px 13px 37px #000;
+  padding: 30px;
+  border-top: 4px solid #017bab;
+  color: white;
+  border-radius: 8px;
+}
+
+/* Título del formulario */
+.form-login h5 {
+  margin: 0;
+  text-align: center;
+  height: 40px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid;
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+
+/* Párrafos informativos */
+.form-login p {
+  margin: 15px 0;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+/* Campos de entrada (inputs y selects) */
+.controls {
+  width: 100%;
+  border: 1px solid #017bab;
+  margin-bottom: 15px;
+  padding: 12px 15px;
+  background: #252323;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  border-radius: 4px;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Placeholder de los campos */
+.controls::placeholder {
+  color: #ccc;
+}
+
+/* Estado focus de los campos */
+.controls:focus {
+  outline: none;
+  border-color: #0ea5e9;
+  box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.2);
+}
+
+/* Botones del formulario */
+.buttons {
+  width: 100%;
+  height: 45px;
+  background: #017bab;
+  border: none;
+  color: white;
+  margin-bottom: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+/* Estado hover de los botones */
+.buttons:hover:not(:disabled) {
+  background: #0284c7;
+  transform: translateY(-1px);
+}
+
+/* Estado disabled de los botones */
+.buttons:disabled {
+  background: #666;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Enlaces del formulario */
+.form-login a {
+  color: #60a5fa;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Estado hover de los enlaces */
+.form-login a:hover {
+  text-decoration: underline;
+  color: #93c5fd;
+}
+
+/* Mensajes de estado (éxito/error) */
+.message {
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.4;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-align: center;
+}
+
+/* Mensaje de éxito */
+.message:not(.error) {
+  background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+  color: #065f46;
+  border: 1px solid #10b981;
+}
+
+/* Mensaje de error */
+.message.error {
+  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+  color: #991b1b;
+  border: 1px solid #ef4444;
+}
+
+/* Información de recuperación de contraseña */
+.form-login .recovery-info {
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 6px;
+  padding: 15px;
+  margin: 15px 0;
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.form-login .recovery-info strong {
+  color: #60a5fa;
+}
+
+/* ============================================================================ */
+/* RESPONSIVE DESIGN */
+/* ============================================================================ */
+
+@media (max-width: 768px) {
+  .form-login {
+    width: 95vw;
+    padding: 20px;
+    margin: 10px;
+  }
+
+  .form-login h5 {
+    font-size: 18px;
+  }
+
+  .controls {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .buttons {
+    height: 42px;
+    font-size: 15px;
+  }
+
+  .message {
+    font-size: 13px;
+    padding: 12px;
+  }
+}
+
+/* ============================================================================ */
+/* ANIMACIONES */
+/* ============================================================================ */
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message {
+  animation: slideIn 0.3s ease;
+}
+
+.form-login {
+  animation: slideIn 0.5s ease;
+}

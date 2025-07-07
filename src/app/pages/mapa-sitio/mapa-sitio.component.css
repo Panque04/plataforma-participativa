@@ -1,0 +1,283 @@
+.mapa-sitio-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #f8fafc;
+  min-height: 100vh;
+}
+
+.mapa-sitio-header {
+  background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+  color: white;
+  padding: 50px 40px;
+  border-radius: 20px;
+  text-align: center;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.mapa-sitio-header h1 {
+  font-size: 2.5rem;
+  margin: 0 0 15px 0;
+  font-weight: 800;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.mapa-sitio-header p {
+  font-size: 1.2rem;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.navegacion-principal {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+}
+
+.navegacion-principal h2 {
+  color: #374151;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.sitemap-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.sitemap-section {
+  background: #f8fafc;
+  padding: 25px;
+  border-radius: 12px;
+  border-left: 4px solid #3b82f6;
+}
+
+.sitemap-section h3 {
+  color: #374151;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.sitemap-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sitemap-list li {
+  margin-bottom: 12px;
+}
+
+.sitemap-list a {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  display: block;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.sitemap-list a:hover {
+  background: #dbeafe;
+  color: #1e40af;
+  transform: translateX(5px);
+}
+
+.sitemap-list .disabled {
+  color: #9ca3af;
+  font-style: italic;
+  display: block;
+  padding: 8px 12px;
+}
+
+.funcionalidades-detalle {
+  margin-bottom: 40px;
+}
+
+.funcionalidades-detalle h2 {
+  color: #374151;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.funcionalidad-card {
+  background: white;
+  margin-bottom: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.funcionalidad-card h3 {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  margin: 0;
+  padding: 20px 30px;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.funcionalidad-content {
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.funcionalidad-descripcion p {
+  color: #6b7280;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.funcionalidad-items ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.funcionalidad-items li {
+  color: #374151;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.funcionalidad-items li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #10b981;
+  font-weight: bold;
+}
+
+.info-tecnica {
+  margin-bottom: 40px;
+}
+
+.info-tecnica h2 {
+  color: #374151;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.tech-card {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tech-card h3 {
+  color: #374151;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.tech-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tech-card li {
+  color: #6b7280;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.tech-card li::before {
+  content: "🔹";
+  position: absolute;
+  left: 0;
+}
+
+.contacto-soporte h2 {
+  color: #374151;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.contacto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.contacto-card {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contacto-card h3 {
+  color: #374151;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.contacto-card p {
+  color: #6b7280;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.contacto-card a {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contacto-card a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .sitemap-grid,
+  .tech-grid,
+  .contacto-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .funcionalidad-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .mapa-sitio-header h1 {
+    font-size: 2rem;
+  }
+
+  .navegacion-principal,
+  .funcionalidad-card,
+  .tech-card,
+  .contacto-card {
+    padding: 20px;
+  }
+}
