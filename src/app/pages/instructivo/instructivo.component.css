@@ -1,0 +1,291 @@
+.instructivo-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.instructivo-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 30px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.instructivo-header h1 {
+  margin: 0 0 10px 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.instructivo-header p {
+  margin: 0;
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.instructivo-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+
+.nav-btn {
+  padding: 12px 20px;
+  border: none;
+  background: #f8f9fa;
+  color: #495057;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.nav-btn:hover {
+  background: #e9ecef;
+  transform: translateY(-2px);
+}
+
+.nav-btn.active {
+  background: #007bff;
+  color: white;
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+.instructivo-content {
+  background: white;
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  min-height: 600px;
+}
+
+.seccion h2 {
+  color: #2c3e50;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 3px solid #3498db;
+}
+
+.paso {
+  margin-bottom: 40px;
+  padding: 25px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  border-left: 5px solid #007bff;
+}
+
+.paso h3 {
+  color: #2c3e50;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+
+.paso-content {
+  line-height: 1.6;
+}
+
+.paso-content p {
+  margin-bottom: 15px;
+}
+
+.paso-content ol,
+.paso-content ul {
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+.paso-content li {
+  margin-bottom: 8px;
+}
+
+.tip {
+  background: #d4edda;
+  border: 1px solid #c3e6cb;
+  color: #155724;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+.warning {
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  color: #856404;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+.tramite-tipo {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #dee2e6;
+}
+
+.tramite-tipo h4 {
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.estado-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 15px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+}
+
+.estado-badge {
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  margin-right: 15px;
+  min-width: 120px;
+  text-align: center;
+}
+
+.estado-badge.pendiente {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.estado-badge.revision {
+  background: #cce5ff;
+  color: #004085;
+}
+
+.estado-badge.aprobado {
+  background: #d4edda;
+  color: #155724;
+}
+
+.estado-badge.rechazado {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.categoria-item {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #dee2e6;
+}
+
+.categoria-item h4 {
+  color: #28a745;
+  margin-bottom: 10px;
+}
+
+.faq-item {
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border-left: 5px solid #17a2b8;
+}
+
+.faq-item h3 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.contacto-info {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.contacto-info h3 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.contacto-item {
+  margin-bottom: 20px;
+  padding: 15px;
+  background: white;
+  border-radius: 8px;
+}
+
+.contacto-item strong {
+  color: #007bff;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.soporte-tecnico {
+  background: #e3f2fd;
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.soporte-tecnico h3 {
+  color: #1976d2;
+  margin-bottom: 15px;
+}
+
+.tip-final {
+  background: #f3e5f5;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.tip-final h3 {
+  color: #7b1fa2;
+  margin-bottom: 15px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .instructivo-container {
+    padding: 10px;
+  }
+
+  .instructivo-header {
+    padding: 20px;
+  }
+
+  .instructivo-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .instructivo-content {
+    padding: 20px;
+  }
+
+  .nav-btn {
+    font-size: 0.8rem;
+    padding: 10px 15px;
+  }
+
+  .paso {
+    padding: 15px;
+  }
+
+  .estado-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .estado-badge {
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+}
