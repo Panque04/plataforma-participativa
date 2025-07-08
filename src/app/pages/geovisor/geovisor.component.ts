@@ -218,17 +218,17 @@ export class GeovisorComponent implements OnInit, AfterViewInit, OnDestroy {
   async ngOnInit() {
     this.isAdmin = this.supabaseService.isAdmin()
     await this.loadCurrentGeoJson()
+
+    // Solo inicializa el mapa cuando el GeoJSON esté listo
+    await this.loadLeaflet()
+    setTimeout(() => {
+      this.initMap()
+    }, 100)
   }
 
+
   async ngAfterViewInit() {
-    try {
-      await this.loadLeaflet()
-      setTimeout(() => {
-        this.initMap()
-      }, 100)
-    } catch (error) {
-      console.error("Error loading Leaflet:", error)
-    }
+    
   }
 
   ngOnDestroy() {
