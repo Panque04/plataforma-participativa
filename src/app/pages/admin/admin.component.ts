@@ -334,6 +334,34 @@ import { SupabaseService, Tramite, Usuario, Sugerencia } from "../../services/su
           </div>
         </div>
       </div>
+      <!-- MÉTRICAS GENERALES -->
+      <div class="admin-metrics">
+        <div class="metric-card">
+          <h3>{{ estadisticasGenerales?.usuarios?.total || 0 }}</h3>
+          <small>{{ estadisticasGenerales?.usuarios?.activos || 0 }} activos</small>
+          <p>👥 Usuarios</p>
+        </div>
+        <div class="metric-card">
+          <h3>{{ estadisticasGenerales?.tramites?.total || 0 }}</h3>
+          <small>{{ estadisticasGenerales?.tramites?.pendientes || 0 }} pendientes</small>
+          <p>📋 Trámites</p>
+        </div>
+        <div class="metric-card">
+          <h3>{{ estadisticasGenerales?.sugerencias?.total || 0 }}</h3>
+          <small>{{ estadisticasGenerales?.sugerencias?.pendientes || 0 }} pendientes</small>
+          <p>💡 Sugerencias</p>
+        </div>
+        <div class="metric-card">
+          <h3>{{ estadisticasGenerales?.tramites?.este_mes || 0 }}</h3>
+          <small>este mes</small>
+          <p>📈 Nuevos Trámites</p>
+        </div>
+        <div class="metric-card">
+          <button class="btn btn-primary" (click)="actualizarMetricas()">
+            🔄 Actualizar Métricas
+          </button>
+        </div>
+      </div>
 
       <!-- Mensajes de Estado -->
       <div *ngIf="message" class="message" [class.success]="messageSuccess" [class.error]="!messageSuccess">
