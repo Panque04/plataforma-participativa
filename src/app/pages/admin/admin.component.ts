@@ -3,6 +3,7 @@ import { CommonModule } from "@angular/common"
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from "@angular/forms"
 import { SupabaseService, Tramite, Usuario, Sugerencia } from "../../services/supabase.service"
 
+
 @Component({
   selector: "app-admin",
   standalone: true,
@@ -322,6 +323,7 @@ import { SupabaseService, Tramite, Usuario, Sugerencia } from "../../services/su
   `,
   styleUrls: ["./admin.component.css"],
 })
+
 export class AdminComponent implements OnInit {
   activeTab = "pendientes"
   tramitesPendientes: Tramite[] = []
@@ -341,6 +343,13 @@ export class AdminComponent implements OnInit {
   messageSuccess = false
   isChangingRole = false
 
+  // Estadisticas generales
+
+  estadisticasGenerales: any = {}
+  currentUserId: string | null = null
+
+  
+
   constructor(
     private supabaseService: SupabaseService,
     private fb: FormBuilder,
@@ -351,14 +360,18 @@ export class AdminComponent implements OnInit {
   }
 
   async ngOnInit() {
+    this.currentUserId = this.supabaseService.getCurrentUser()?.id || null
     await this.loadInitialData()
+    await this.cargarEstadisticasGenerales()
   }
+
 
   private async loadInitialData() {
     await this.loadTramitesPendientes()
     await this.loadTramitesResueltos()
     await this.loadUsuarios()
     await this.loadSugerencias()
+    await this.cargarEstadisticasGenerales()
   }
 
   setActiveTab(tab: string) {
@@ -427,6 +440,20 @@ export class AdminComponent implements OnInit {
     this.responseAction = ""
     this.responseForm.reset()
   }
+  async cargarEstadisticasGenerales() {
+    try {
+      this.estadisticasGenerales = await this.supabaseService.obtenerMetricasGenerales()
+    } catch (error) {
+      console.error("❌ Error cargando estadísticas generales:", error)
+    }
+  }
+
+
+  async actualizarMetricas() {
+    await this.cargarEstadisticasGenerales()
+    this.showMessage("📊 Métricas actualizadas", true)
+  }
+
 
   async submitResponse() {
     if (!this.responseForm.valid || !this.selectedTramite) return

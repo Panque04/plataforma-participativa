@@ -867,6 +867,52 @@ export class SupabaseService {
       return null
     }
   }
+// ============================================================================
+  // MÉTODOS METRICAS - CORREGIDOS
+  // ============================================================================
+  async obtenerMetricasGenerales(): Promise<any> {
+  try {
+    const { data: usuarios } = await this.supabase
+      .from("usuarios")
+      .select("id, email_verificado")
+
+    const { data: tramites } = await this.supabase
+      .from("tramites")
+      .select("id, estado, fecha_solicitud")
+
+    const { data: sugerencias } = await this.supabase
+      .from("sugerencias")
+      .select("id, estado")
+
+    const usuariosTotal = usuarios?.length || 0
+    const usuariosActivos = usuarios?.filter(u => u.email_verificado).length || 0
+
+    const tramitesTotal = tramites?.length || 0
+    const tramitesPendientes = tramites?.filter(t => t.estado === "pendiente").length || 0
+
+    const sugerenciasTotal = sugerencias?.length || 0
+    const sugerenciasPendientes = sugerencias?.filter(s => s.estado === "pendiente").length || 0
+
+    const mesActual = new Date().getMonth()
+    const tramitesEsteMes = tramites?.filter(t => new Date(t.fecha_solicitud).getMonth() === mesActual).length || 0
+
+    return {
+      usuarios: { total: usuariosTotal, activos: usuariosActivos },
+      tramites: { total: tramitesTotal, pendientes: tramitesPendientes, este_mes: tramitesEsteMes },
+      sugerencias: { total: sugerenciasTotal, pendientes: sugerenciasPendientes }
+    }
+  } catch (error) {
+    console.error("❌ Error cargando métricas generales:", error)
+    return {
+      usuarios: { total: 0, activos: 0 },
+      tramites: { total: 0, pendientes: 0, este_mes: 0 },
+      sugerencias: { total: 0, pendientes: 0 }
+    }
+  }
+}
+
+  
+
 
   // ============================================================================
   // MÉTODOS DE GEOVISOR - CORREGIDOS
