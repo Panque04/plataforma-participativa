@@ -14,6 +14,26 @@ import { SupabaseService, Tramite, Usuario, Sugerencia } from "../../services/su
         <h2>🛠️ Panel de Administración</h2>
         <p>Gestiona trámites, usuarios y sugerencias del sistema</p>
       </div>
+      <!-- Estadísticas Generales -->
+      <div class="dashboard-stats">
+        <div class="stat-card">
+          <h3>{{ estadisticasGenerales?.usuarios?.total || 0 }}</h3>
+          <small>{{ estadisticasGenerales?.usuarios?.activos || 0 }} activos</small>
+        </div>
+        <div class="stat-card">
+          <h3>{{ estadisticasGenerales?.tramites?.total || 0 }}</h3>
+          <small>{{ estadisticasGenerales?.tramites?.pendientes || 0 }} pendientes</small>
+        </div>
+        <div class="stat-card">
+          <h3>{{ estadisticasGenerales?.sugerencias?.total || 0 }}</h3>
+          <small>{{ estadisticasGenerales?.sugerencias?.pendientes || 0 }} pendientes</small>
+        </div>
+        <div class="stat-card">
+          <h3>{{ estadisticasGenerales?.tramites?.este_mes || 0 }}</h3>
+          <small>Este mes</small>
+        </div>
+        <button class="btn btn-secondary" (click)="actualizarMetricas()">🔄 Actualizar</button>
+      </div>
 
       <!-- Pestañas de Navegación -->
       <div class="admin-tabs">
