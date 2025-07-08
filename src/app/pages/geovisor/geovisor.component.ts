@@ -525,23 +525,26 @@ export class GeovisorComponent implements OnInit, AfterViewInit, OnDestroy {
         this.searchSuccess = true
 
         if (result.geometry && result.geometry.coordinates) {
-          const coords = this.getFeatureCenter(result.geometry)
-          if (coords) {
-            this.map.setView([coords[1], coords[0]], 18)
+          const layer = L.geoJSON(result, {
+            style: {
+              color: "#ff0000",
+              weight: 4,
+              fillOpacity: 0.7,
+            },
+          }).addTo(this.map)
 
-            const layer = L.geoJSON(result, {
-              style: {
-                color: "#ff0000",
-                weight: 4,
-                fillOpacity: 0.7,
-              },
-            }).addTo(this.map)
+          // Ajustar el mapa al tamaño del predio
+          const bounds = layer.getBounds()
+          this.map.fitBounds(bounds, {
+            padding: [20, 20],
+            maxZoom: 17, // evita acercarse demasiado
+          })
 
-            setTimeout(() => {
-              this.map.removeLayer(layer)
-            }, 5000)
-          }
+          setTimeout(() => {
+            this.map.removeLayer(layer)
+          }, 5000)
         }
+
       } else {
         this.searchMessage = "No se encontraron resultados"
         this.searchSuccess = false
