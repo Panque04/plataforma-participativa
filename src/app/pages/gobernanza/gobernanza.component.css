@@ -672,3 +672,51 @@ section h2 {
     font-size: 1.8rem;
   }
 }
+
+/* Curso de Gobernanza */
+.curso-section {
+  background: white;
+  padding: 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.curso-intro {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+  color: #4b5563;
+}
+
+.modulos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.modulo-card {
+  background: #f9fafb;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  text-align: left;
+}
+
+.modulo-card:hover {
+  transform: translateY(-5px);
+}
+
+.modulo-card h3 {
+  font-size: 1.3rem;
+  color: #1e40af;
+  margin-bottom: 1rem;
+}
+
+.modulo-card p {
+  color: #374151;
+  line-height: 1.6;
+}

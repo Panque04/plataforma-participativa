@@ -57,6 +57,44 @@ import { SupabaseService } from "../../services/supabase.service"
         </div>
       </section>
 
+      <section class="curso-section">
+        <h2>📚 Curso de Gobernanza Territorial</h2>
+        <p class="curso-intro">
+          Conoce los fundamentos, principios y herramientas de la gobernanza territorial participativa en Tausa.
+          Este curso te permitirá comprender tu rol como ciudadano y cómo puedes incidir en las decisiones sobre el territorio.
+        </p>
+
+        <div class="modulos-grid">
+          <div class="modulo-card">
+            <h3>📖 Módulo 1: ¿Qué es la Gobernanza?</h3>
+            <p>Aprende los conceptos clave de la gobernanza territorial, su origen y su importancia en la gestión pública local.</p>
+          </div>
+          <div class="modulo-card">
+            <h3>🧭 Módulo 2: Participación Ciudadana</h3>
+            <p>Descubre cómo puedes participar activamente en las decisiones del municipio y ejercer control social sobre la gestión pública.</p>
+          </div>
+          <div class="modulo-card">
+            <h3>🛠️ Módulo 3: Instrumentos de Planeación</h3>
+            <p>Conoce los principales instrumentos como el POT, los Planes de Desarrollo y el Catastro Multipropósito.</p>
+          </div>
+          <div class="modulo-card">
+            <h3>📈 Módulo 4: Seguimiento y Control</h3>
+            <p>Aprende a hacer seguimiento a las acciones de la administración y cómo usar la información pública de forma efectiva.</p>
+          </div>
+        </div>
+
+        <div class="cta-section">
+          <div class="cta-content">
+            <h2>¡Participa activamente!</h2>
+            <p>Conviértete en un líder territorial y contribuye a construir una comunidad más justa, organizada y sostenible.</p>
+            <div class="cta-buttons">
+              <a href="#" class="btn btn-primary">Iniciar Curso</a>
+              <a href="#" class="btn btn-secondary">Descargar Material</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      
       <!-- Estadísticas de Gobernanza DINÁMICAS -->
       <section class="stats-gobernanza">
         <h2>📊 Indicadores de Gobernanza Territorial</h2>
