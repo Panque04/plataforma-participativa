@@ -116,6 +116,14 @@ export class SupabaseService {
     })
   }
 
+    getUserName(): Promise<string> {
+    return this.supabase.auth.getUser().then(({ data, error }) => {
+      if (error || !data?.user) return 'Participante';
+      return data.user.user_metadata?.['full_name'] || data.user.email || 'Participante';
+    });
+  }
+
+
   private resetInactivityTimer() {
     if (this.inactivityTimer) {
       clearTimeout(this.inactivityTimer)

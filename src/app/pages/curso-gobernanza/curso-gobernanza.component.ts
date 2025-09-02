@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { SupabaseService } from "../../services/supabase.service";
+import jsPDF from 'jspdf';
+
 
 @Component({
   selector: 'app-curso-gobernanza',
   standalone: true,
   imports: [CommonModule, FormsModule],
+  providers: [SupabaseService],
   styleUrls: ['./curso-gobernanza.component.css'],
   template: `
     <section class="curso-container">
@@ -14,8 +18,9 @@ import { FormsModule } from '@angular/forms';
       </div>
 
       <div class="certificado-container" *ngIf="progreso === 100">
-        <a href="/assets/certificado.pdf" class="btn-certificado" download>🎓 Descargar certificado</a>
+        <button class="btn-certificado" (click)="descargarCertificado()">🎓 Descargar certificado</button>
       </div>
+
 
       <div *ngFor="let modulo of modulos; let i = index" 
            class="modulo" 
@@ -248,4 +253,38 @@ export class CursoGobernanzaComponent {
     }
     this.progreso = (aprobados / this.modulos.length) * 100;
   }
+
+  constructor(private supabaseService: SupabaseService) {} // ✅ Inyectado correctamente
+
+  getUserName(): Promise<string> {
+    return this.supabaseService.getUserName();
+  }
+
+
+
+
+
+  async descargarCertificado() {
+    const nombre = await this.getUserName();
+    const fecha = new Date().toLocaleDateString();
+
+    const doc = new jsPDF();
+    doc.setFontSize(18);
+    doc.text('CERTIFICADO DE PARTICIPACIÓN', 105, 30, { align: 'center' });
+    doc.setFontSize(14);
+    doc.text(`Se certifica que:`, 105, 50, { align: 'center' });
+    doc.setFontSize(16);
+    doc.text(`${nombre}`, 105, 60, { align: 'center' });
+    doc.setFontSize(14);
+    doc.text(`ha completado satisfactoriamente el curso:`, 105, 75, { align: 'center' });
+    doc.setFontSize(16);
+    doc.text(`Gobernanza Territorial y Participación Comunitaria`, 105, 85, { align: 'center' });
+    doc.setFontSize(12);
+    doc.text(`Fecha de finalización: ${fecha}`, 105, 100, { align: 'center' });
+    doc.text(`Firma responsable`, 105, 120, { align: 'center' });
+    doc.text(`OptiDecisionHub - Catastro Tausa`, 105, 128, { align: 'center' });
+
+    doc.save('Certificado_Gobernanza.pdf');
+  }
+
 }
