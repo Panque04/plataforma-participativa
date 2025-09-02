@@ -1,6 +1,8 @@
 import { Component, type OnInit } from "@angular/core"
 import { CommonModule } from "@angular/common"
 import { SupabaseService } from "../../services/supabase.service"
+import { Router } from "@angular/router"
+
 
 @Component({
   selector: "app-gobernanza",
@@ -88,8 +90,7 @@ import { SupabaseService } from "../../services/supabase.service"
             <h2>¡Participa activamente!</h2>
             <p>Conviértete en un líder territorial y contribuye a construir una comunidad más justa, organizada y sostenible.</p>
             <div class="cta-buttons">
-              <a href="#" class="btn btn-primary">Iniciar Curso</a>
-              <a href="#" class="btn btn-secondary">Descargar Material</a>
+              <button class="btn btn-primary" (click)="irAlCurso()">Iniciar Curso</button>
             </div>
           </div>
         </div>
@@ -238,9 +239,9 @@ import { SupabaseService } from "../../services/supabase.service"
           <div class="data-sources">
             <h4>📋 Fuentes de Datos</h4>
             <ul>
-              <li><strong>Usuarios:</strong> Tabla 'usuarios' - Total registrados y verificados</li>
-              <li><strong>Trámites:</strong> Tabla 'tramites' - Estados y fechas de procesamiento</li>
-              <li><strong>Sugerencias:</strong> Tabla 'sugerencias' - Participación ciudadana</li>
+              <li><strong>Usuarios:</strong> Tabla "usuarios" - Total registrados y verificados</li>
+              <li><strong>Trámites:</strong> Tabla "tramites" - Estados y fechas de procesamiento</li>
+              <li><strong>Sugerencias:</strong> Tabla "sugerencias" - Participación ciudadana</li>
               <li><strong>Actividad:</strong> Logs del sistema y métricas de uso</li>
             </ul>
           </div>
@@ -368,11 +369,29 @@ export class GobernanzaComponent implements OnInit {
   gobernanzaStats: any = null
   loadingStats = true
 
-  constructor(private supabaseService: SupabaseService) {}
+constructor(
+  private router: Router,
+  private supabaseService: SupabaseService
+) {}
 
   async ngOnInit() {
     await this.loadGobernanzaStats()
   }
+
+  async irAlCurso() {
+    const { data, error } = await this.supabaseService.getSession();
+    console.log("Sesión detectada:", data?.session)
+
+    if (data?.session) {
+      this.router.navigate(["/curso-gobernanza"]);
+    } else {
+      alert("Debes iniciar sesión para acceder al curso.");
+      this.router.navigate(["/login"]);
+    }
+  }
+
+
+
 
   async loadGobernanzaStats() {
     try {
@@ -521,4 +540,6 @@ export class GobernanzaComponent implements OnInit {
       totalSugerencias: 0,
     }
   }
+
+
 }

@@ -431,6 +431,18 @@ export class SupabaseService {
     return this.currentUserSubject.value
   }
 
+  async getSession() {
+  try {
+    return await this.supabase.auth.getSession()
+  } catch (error) {
+    console.error("Error obteniendo sesión:", error)
+    return { data: null, error }
+  }
+}
+
+
+
+
   isLoggedIn(): boolean {
     return this.getCurrentUser() !== null
   }
@@ -1261,7 +1273,7 @@ export class SupabaseService {
             contenido: `
               <p>Hola ${tramiteData.usuarios.nombres},</p>
               <p>Tu trámite con ID <strong>${tramiteId}</strong> ha sido actualizado al estado <strong>${estado}</strong>.</p>
-              <p><strong>Observación:</strong> ${comentario || 'Sin observaciones adicionales.'}</p>
+              <p><strong>Observación:</strong> ${comentario || "Sin observaciones adicionales."}</p>
               <p>Gracias por usar la plataforma.</p>
             `,
             enviado: false,
@@ -1285,6 +1297,7 @@ export class SupabaseService {
       console.error("❌ Error actualizando trámite:", error)
       return { success: false, message: "Error de conexión" }
     }
+    
   }
 
 }

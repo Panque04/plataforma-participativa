@@ -55,6 +55,7 @@ import { SupabaseService } from "../../services/supabase.service"
             <li><a routerLink="/gobernanza" routerLinkActive="active">Gobernanza</a></li>
             <li><a routerLink="/sugerencias" routerLinkActive="active">Sugerencias</a></li>
             <li><a routerLink="/instructivo" routerLinkActive="active">Instructivo</a></li>
+            <li *ngIf="isLoggedIn"><a routerLink="/curso-gobernanza" routerLinkActive="active">Curso</a></li>
           </ul>
           
           <!-- Sección de Usuario/Login -->

@@ -38,7 +38,7 @@ import { SupabaseService } from "../../services/supabase.service"
         
         <!-- Botón de Login -->
         <button type="submit" class="buttons" [disabled]="loginForm.invalid || isLoggingIn">
-          {{ isLoggingIn ? 'Iniciando sesión...' : 'Ingresar' }}
+          {{ isLoggingIn ? "Iniciando sesión..." : "Ingresar" }}
         </button>
         
         <!-- Mensaje de resultado -->
@@ -109,7 +109,7 @@ import { SupabaseService } from "../../services/supabase.service"
         
         <!-- Botón de registro -->
         <button type="submit" class="buttons" [disabled]="registerForm.invalid || isSubmitting">
-          {{ isSubmitting ? 'Registrando...' : 'Registrarse' }}
+          {{ isSubmitting ? "Registrando..." : "Registrarse" }}
         </button>
         
         <!-- Mensaje de resultado -->
@@ -142,7 +142,7 @@ import { SupabaseService } from "../../services/supabase.service"
           formControlName="email"
           required>
         <button type="submit" class="buttons" [disabled]="forgotPasswordForm.invalid || isRecovering">
-          {{ isRecovering ? 'Enviando enlace...' : 'Enviar Enlace de Recuperación' }}
+          {{ isRecovering ? "Enviando enlace..." : "Enviar Enlace de Recuperación" }}
         </button>
       </form>
 
@@ -293,11 +293,18 @@ export class LoginComponent {
 
         if (result.success) {
           console.log("✅ Login exitoso, redirigiendo...")
-          // Redirigir después de un breve delay para mostrar el mensaje
+
+          const quiereCurso = localStorage.getItem("cursoPostLogin")
+          localStorage.removeItem("cursoPostLogin")
+
           setTimeout(() => {
+            if (quiereCurso) {
+              this.router.navigate(["/curso-gobernanza"])
+            }
             this.router.navigate(["/"])
           }, 2000)
         }
+
       } catch (error) {
         console.error("❌ Error en login:", error)
         this.loginMessage = "Error de conexión. Verifica tu internet e intenta nuevamente."
@@ -326,7 +333,7 @@ export class LoginComponent {
         this.isSubmitting = false
         return
       }
-
+      
       // Preparar datos del usuario
       const usuario = {
         cedula: formData.cedula,

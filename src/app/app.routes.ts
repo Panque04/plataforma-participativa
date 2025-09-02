@@ -13,6 +13,8 @@ import { ResetPasswordComponent } from "./pages/reset-password/reset-password.co
 import { InstructivoComponent } from "./pages/instructivo/instructivo.component"
 import { AuthGuard } from "./guards/auth.guard"
 import { AdminGuard } from "./guards/admin.guard"
+import { CursoGobernanzaComponent } from "./pages/curso-gobernanza/curso-gobernanza.component"
+
 
 export const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -28,5 +30,8 @@ export const routes: Routes = [
   { path: "admin", component: AdminComponent, canActivate: [AdminGuard] },
   { path: "reset-password", component: ResetPasswordComponent },
   { path: "instructivo", component: InstructivoComponent },
-  { path: "**", redirectTo: "" },
+  { path: "curso-gobernanza", component: CursoGobernanzaComponent }, // 🔄 MOVIDO ARRIBA
+  { path: "**", redirectTo: "" }, // ⛔️ Siempre al final
 ]
+
+

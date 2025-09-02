@@ -1,0 +1,170 @@
+/* curso-gobernanza.component.css */
+
+.curso-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+}
+
+.modulo {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.bloqueado {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.modulo-header {
+  background-color: #e6f2ff;
+  padding: 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.toggle-icon {
+  transition: transform 0.3s ease;
+}
+
+.toggle-icon.rotado {
+  transform: rotate(90deg);
+}
+
+.locked-icon {
+  margin-left: 0.5rem;
+  color: #b00;
+}
+
+.modulo-contenido {
+  padding: 1rem 1.5rem;
+}
+
+.ejemplo, .nota, .importante {
+  margin-top: 1rem;
+  padding: 0.8rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.ejemplo {
+  background-color: #fff3cd;
+  border-left: 5px solid #ffc107;
+}
+
+.nota {
+  background-color: #d1ecf1;
+  border-left: 5px solid #17a2b8;
+}
+
+.importante {
+  background-color: #f8d7da;
+  border-left: 5px solid #dc3545;
+}
+
+.btn-evaluacion {
+  display: block;
+  margin: 1.5rem auto 1rem auto;
+  padding: 0.6rem 1.2rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-evaluacion:hover {
+  background-color: #0056b3;
+}
+
+.evaluacion {
+  margin-top: 1rem;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.pregunta-bloque {
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px dashed #ccc;
+}
+
+.pregunta-titulo {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.opciones {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.opcion input {
+  margin-right: 0.5rem;
+}
+
+.btn-verde {
+  background-color: #28a745;
+  color: white;
+  padding: 0.6rem 1.4rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: block;
+  margin: 1rem auto 0 auto;
+}
+
+.btn-verde:hover {
+  background-color: #218838;
+}
+
+.barra-progreso {
+  width: 100%;
+  background-color: #eee;
+  height: 16px;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.progreso {
+  height: 100%;
+  background-color: #28a745;
+  transition: width 0.5s ease;
+}
+
+.certificado-container {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.btn-certificado {
+  padding: 0.7rem 1.5rem;
+  background-color: #ffc107;
+  color: #000;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn-certificado:hover {
+  background-color: #e0a800;
+}

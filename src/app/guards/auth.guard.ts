@@ -3,21 +3,20 @@ import { CanActivate, Router } from "@angular/router"
 import { SupabaseService } from "../services/supabase.service"
 
 @Injectable({
-  providedIn: "root",
+  providedIn: "root"
 })
 export class AuthGuard implements CanActivate {
-  constructor(
-    private supabaseService: SupabaseService,
-    private router: Router,
-  ) {}
+  constructor(private router: Router, private supabase: SupabaseService) {}
 
-  canActivate(): boolean {
-    if (this.supabaseService.isLoggedIn()) {
-      return true
-    } else {
-      this.router.navigate(["/login"])
-      return false
-    }
+  async canActivate(): Promise<boolean> {
+  const { data, error } = await this.supabase.getSession()
+
+  if (data?.session) {
+    return true
+  } else {
+    this.router.navigate(["/login"])
+    return false
   }
 }
 
+}
